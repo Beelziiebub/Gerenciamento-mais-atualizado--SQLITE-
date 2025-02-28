@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+    <!-- CONTAINER LOGIN -->
+    <div id="login" class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="message"></p>
+        <p>
+            <a href="#" onclick="showRegister()">Criar conta</a> | 
+            <a href="#" onclick="showReset()">Esqueci a senha</a> |
+            <a href="RotasDFrontend.html" onclick="retornarHome()">Voltar ao Home</a>
+        </p>
+    </div>
+
+    <!-- CONTAINER DASHBOARD -->
+    <div id="dashboard" class="container" style="display: none;">
+        <h2>Dashboard</h2>
+        <button id="logout">Sair</button>
+        <h3>Lista de Usuários</h3>
+        <ul id="user-list"></ul>
+    </div>
+
+    <!-- CONTAINER CADASTRO -->
+    <div id="registerContainer" class="container" style="display: none;">
+        <h2>Cadastrar</h2>
+        <form id="registerForm">
+            <input type="text" id="nome" placeholder="Nome" required>
+            <input type="text" id="sobrenome" placeholder="Sobrenome" required>
+            <input type="text" id="username" placeholder="Nome de Usuário" required>
+            <input type="email" id="registerEmail" placeholder="Email" required>
+            <div>
+                <input type="password" id="registerPassword" placeholder="Senha" required>
+                <button type="button" id="toggleRegisterPassword">Mostrar</button>
+            </div>
+            <div>
+                <input type="password" id="confirmPassword" placeholder="Confirmar Senha" required>
+                <button type="button" id="toggleConfirmPassword">Mostrar</button>
+            </div>
+            <br>
+            <!-- reCAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+            <div class="terms-container">
+                <input type="checkbox" id="termsCheckbox" required>
+                <label for="termsCheckbox">Eu aceito os <a href="termos.html" target="_blank">termos e condições</a></label>
+            </div>
+            <br>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p id="registerMessage"></p>
+        <p><a href="#" onclick="showLogin()">Já tenho uma conta</a></p>
+    </div>
+
+    <!-- CONTAINER RESETAR SENHA -->
+    <div id="resetContainer" class="container" style="display: none;">
+        <h2>Redefinir Senha</h2>
+        <input type="email" id="resetEmail" placeholder="Digite seu email" required>
+        <br>
+        <button onclick="resetPassword()">Redefinir</button>
+        <p id="resetMessage"></p>
+        <p><a href="#" onclick="showLogin()">Voltar ao login</a></p>
+    </div>
+
+    <!-- Script JS -->
+    <script src="login.js"></script>
+</body>
+</html>

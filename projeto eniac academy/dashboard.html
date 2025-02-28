@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dash">
+    <link rel="stylesheet" href="dashboard">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="dashboard.js"></script>
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+
+<body>
+   
+    <div class="dashboard-container">
+        <!--Sidebar-->
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">📊 Estatísticas</a>
+                        <a href="#">👥 Usuários</a>
+                        <a href="#">⚙ Configurações</a>
+                        <a href="RotasDFrontend.html">🚏 Home</a>
+                        <a href="login.html">🔑 Login</a>
+
+                        </li>
+        
+                </ul>
+            </nav>
+            
+        
+        </aside>
+        
+        <button id="Logout">Sair</button>
+
+        <!--Conteúdo Principal-->]
+        <main>
+            <header>
+
+                <h1>Bem-vindo!</h1>
+                <button id="dark-mode-toggle">🌙</button>
+
+                <section class="Stats">
+
+                    <div class="card">📈 Total de Usuários: <span id="total-users">0</span></div>
+                    <div class="card">🚀 Novos Hoje: <span id="new-users">0</span></div>
+                    <div class="card">💰 Receita: <span id="revenue">R$ 0,00</span></div>
+    
+                </section>
+
+                <!-- Gráfico -->
+            <section class="charts">
+                <canvas id="userChart"></canvas>
+            </section>
+
+             <!-- Tabela de Usuários -->
+             <section class="user-table">
+                <h2>Lista de Usuários</h2>
+                <input type="text" id="search" placeholder="🔍 Buscar Usuário">
+                <button id="export">📥 Exportar CSV</button>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-list"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+
+        </main>
+    </div>
+
+
+   
+</body>
+</html>
